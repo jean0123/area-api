@@ -6,9 +6,10 @@ class TestApiArea(unittest.TestCase):
     def test_validate(self):
         self.assertTrue(API_Area.validate([1, 2, 3, 4, 5]))
         self.assertFalse(API_Area.validate([1]))
-        self.assertTrue(API_Area.validate([1, 2, 3, 105]))
+        self.assertTrue(API_Area.validate([1, 2, 3, 104]))
         self.assertFalse(API_Area.validate([1, 2, 106, 4, 5, 6]))
         self.assertFalse(API_Area.validate([1, 0, 3, 105]))
+        self.assertFalse(API_Area.validate([1, -1, 3, 0]))
     
     def test_maxArea(self):
         self.assertEqual(API_Area.maxArea([1, 2, 3, 4, 5]), 6)

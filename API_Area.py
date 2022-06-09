@@ -46,7 +46,7 @@ def validate(height: list[int]) -> bool:
         return False
     else:
         for i in height:
-            if i < 1 or i > 105:
+            if i < 0 or i > 104:
                 return False
     return True
 
